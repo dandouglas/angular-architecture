@@ -4,20 +4,29 @@ import { LoginState } from '../models/login-state.model';
 
 export const initialState: LoginState = {
   loggedIn: undefined,
-  initialising: undefined,
+  loginPageState: {
+    initialising: undefined,
+  }
 };
 
 const LoginReducerFn = createReducer(
   initialState,
   on(LoginPageActions.enterPage, (state: LoginState) => ({
     ...state,
-    LoginPageState: {
+    loginPageState: {
       initialising: true,
     }
   })),
   on(LoginPageActions.leavePage, (state: LoginState) => ({
     ...state,
-    LoginPageState: undefined
+    loginPageState: undefined
+  })),
+  on(LoginPageActions.leavePage, (state: LoginState) => ({
+    ...state,
+    loginPageState: {
+      initialising: false,
+    },
+    loggedIn: true
   }))
 );
 

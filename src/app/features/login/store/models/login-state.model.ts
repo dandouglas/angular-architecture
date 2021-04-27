@@ -1,9 +1,11 @@
 import { AppState } from 'src/app/core/root-store/app-state.model';
 
 export interface LoginState {
-  initialising: boolean | undefined,
+  loginPageState: LoginPageState | undefined,
   loggedIn: boolean | undefined,
 }
+
+export interface LoginPageState { initialising: boolean | undefined };
 
 export const loginStoreKey = 'login';
 

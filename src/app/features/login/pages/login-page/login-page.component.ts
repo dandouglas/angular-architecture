@@ -30,7 +30,7 @@ export class LoginPageComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(): void {
-    console.log('Attempt login...')
+    this.loginFacadeService.dispatch(LoginPageActions.login());
   }
 
 }
