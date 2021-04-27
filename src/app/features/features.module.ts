@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { HomeModule } from './home/home.module';
-import { LoginModule } from './login/login.module';
+import { HomeModule } from '@features/home/home.module';
+import { LoginModule } from '@features/login/login.module';
 
 @NgModule({
   exports: [

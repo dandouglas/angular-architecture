@@ -1,10 +1,8 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthenticationModule } from './authentication/authentication.module';
-import { NavigationModule } from './navigation/navigation.module';
-import { RootStoreModule } from './root-store/root-store.module';
-
-
+import { AuthenticationModule } from '@core/authentication/authentication.module';
+import { NavigationModule } from '@core/navigation/navigation.module';
+import { RootStoreModule } from '@core/root-store/root-store.module';
 
 @NgModule({
   declarations: [],
