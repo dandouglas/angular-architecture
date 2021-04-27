@@ -21,7 +21,7 @@ const LoginReducerFn = createReducer(
     ...state,
     loginPageState: undefined
   })),
-  on(LoginPageActions.leavePage, (state: LoginState) => ({
+  on(LoginPageActions.login, (state: LoginState) => ({
     ...state,
     loginPageState: {
       initialising: false,
