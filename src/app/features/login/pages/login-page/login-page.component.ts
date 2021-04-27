@@ -17,7 +17,11 @@ export class LoginPageComponent implements OnInit {
     this.form = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
-  });
+    });
+  }
+
+  onSubmit(): void {
+    console.log('Attempt login...')
   }
 
 }
