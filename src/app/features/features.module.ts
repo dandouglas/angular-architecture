@@ -6,7 +6,6 @@ import { LoginModule } from './login/login.module';
 
 
 @NgModule({
-  declarations: [],
   exports: [
     HomeModule,
     LoginModule,

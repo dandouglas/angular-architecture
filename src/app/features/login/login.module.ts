@@ -1,13 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { LoginRoutingModule } from 'src/app/router/login/login-routing.module';
 
 
 
 @NgModule({
   declarations: [LoginPageComponent],
-  imports: [
-    CommonModule
-  ]
 })
 export class LoginModule { }
