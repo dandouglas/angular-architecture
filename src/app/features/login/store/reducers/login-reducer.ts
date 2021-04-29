@@ -1,11 +1,12 @@
 import { createReducer, on, Action } from '@ngrx/store';
+import { createFalse } from 'typescript';
 import { LoginPageActions } from '../actions/login-page.actions';
 import { LoginState } from '../models/login-state.model';
 
 export const initialState: LoginState = {
-  loggedIn: undefined,
+  loggedIn: false,
   loginPageState: {
-    initialising: undefined,
+    initialising: false,
   }
 };
 
@@ -30,6 +31,6 @@ const loginReducerFn = createReducer(
   }))
 );
 
-export function loginReducer(state: LoginState | undefined, action: Action) {
+export function loginReducer(state: LoginState, action: Action) {
   return loginReducerFn(state, action);
 }
