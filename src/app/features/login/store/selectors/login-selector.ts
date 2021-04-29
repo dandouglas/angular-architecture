@@ -7,9 +7,11 @@ const selectLoginPageState = createSelector(selectLoginState,
     (loginState) => loginState.loginPageState
 );
 
-const selectLoggedInState = createSelector(selectLoginState,
-    (loginState) => loginState.loggedIn
-);
+const selectLoggedInState = createSelector(selectLoginState, (loginState) => {
+  return loginState
+    ? loginState.loggedIn
+    : false;
+});
 
 export const LoginSelectors = {
     selectLoginPageState,
