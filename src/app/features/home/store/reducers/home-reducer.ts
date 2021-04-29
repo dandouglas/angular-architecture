@@ -9,7 +9,7 @@ export const initialState: HomeState = {
   }
 };
 
-const HomeReducerFn = createReducer(
+const homeReducerFn = createReducer(
   initialState,
   on(HomePageActions.enterPage, (state: HomeState) => ({
     ...state,
@@ -34,6 +34,6 @@ const HomeReducerFn = createReducer(
   })),
 );
 
-export function HomeReducer(state: HomeState | undefined, action: Action) {
-  return HomeReducerFn(state, action);
+export function homeReducer(state: HomeState, action: Action) {
+  return homeReducerFn(state, action);
 }

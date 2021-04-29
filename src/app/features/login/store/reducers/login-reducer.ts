@@ -9,7 +9,7 @@ export const initialState: LoginState = {
   }
 };
 
-const LoginReducerFn = createReducer(
+const loginReducerFn = createReducer(
   initialState,
   on(LoginPageActions.enterPage, (state: LoginState) => ({
     ...state,
@@ -30,6 +30,6 @@ const LoginReducerFn = createReducer(
   }))
 );
 
-export function LoginReducer(state: LoginState | undefined, action: Action) {
-  return LoginReducerFn(state, action);
+export function loginReducer(state: LoginState | undefined, action: Action) {
+  return loginReducerFn(state, action);
 }
