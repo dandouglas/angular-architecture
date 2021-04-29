@@ -4,7 +4,8 @@ import { HomeState } from '../models/home-state.model';
 
 export const initialState: HomeState = {
   homePageState: {
-    initialising: undefined,
+    initialising: false,
+    someEvent: ''
   }
 };
 
@@ -14,11 +15,22 @@ const HomeReducerFn = createReducer(
     ...state,
     homePageState: {
       initialising: true,
+      someEvent: ''
     }
   })),
   on(HomePageActions.leavePage, (state: HomeState) => ({
     ...state,
-    homePageState: undefined
+    homePageState: {
+      initialising: false,
+      someEvent: ''
+    }
+  })),
+  on(HomePageActions.someAction, (state, { event }) => ({
+    ...state,
+    homePageState: {
+      ...state.homePageState,
+      someEvent: event
+    }
   })),
 );
 

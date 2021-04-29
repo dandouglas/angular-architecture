@@ -22,4 +22,8 @@ export class HomePageComponent implements OnInit, OnDestroy {
     this.homeFacadeService.dispatch(HomePageActions.leavePage());
   }
 
+  onDoSomething(event: string): void {
+    this.homeFacadeService.dispatch(HomePageActions.someAction({event}));
+  }
+
 }
