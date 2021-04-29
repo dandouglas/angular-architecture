@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { LoginFacadeService } from '../../services/login-facade.service';
 import { LoginPageActions } from '../../store/actions/login-page.actions';
 
@@ -12,16 +12,15 @@ export class LoginPageComponent implements OnInit, OnDestroy {
   form: any;
 
   constructor(
-    private formBuilder: FormBuilder,
     private loginFacadeService: LoginFacadeService,
   ) { }
 
   ngOnInit(): void {
     this.loginFacadeService.dispatch(LoginPageActions.enterPage());
 
-    this.form = this.formBuilder.group({
-      username: ['someuser'],
-      password: ['password']
+    this.form = new FormGroup({
+      username: new FormControl('some-user'),
+      password: new FormControl('password')
     });
   }
 

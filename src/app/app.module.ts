@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from '@router/app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from '@core/core.module';
-import { FeaturesModule } from '@features/features.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -16,7 +15,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     BrowserModule,
     CoreModule,
-    FeaturesModule,
     NgbModule,
   ],
   providers: [],
