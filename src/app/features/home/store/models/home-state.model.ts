@@ -5,7 +5,6 @@ export interface HomeState {
 }
 
 export interface HomePageState {
-  initialising: boolean,
   someEvent: string
 };
 
