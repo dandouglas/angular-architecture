@@ -22,17 +22,9 @@ export class AuthenticationEffects {
       })
     ));
 
-  logOut$ = createEffect(() =>
-    this.actions$.pipe(
-      ofType(AuthenticationActions.logout),
-      tap(() => {
-        console.log('logged out');
-      })), { dispatch: false }
-  );
-
   navigateToHome$ = createEffect(() =>
       this.actions$.pipe(
-        ofType(AuthenticationActions.authSuccess),
+        ofType(AuthenticationActions.authSuccess, AuthenticationActions.logout),
         tap(() => this.router.navigate(['/']))
       ), { dispatch: false }
   )

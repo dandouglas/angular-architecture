@@ -9,11 +9,11 @@ const logout = createAction(
 );
 
 const authSuccess = createAction(
-    '[Authentication] Success',
+    '[Authentication] Login Success',
 );
 
 const authFailure = createAction(
-  '[Authentication] Fail',
+  '[Authentication] Login Fail',
 );
 
 export const AuthenticationActions = {
