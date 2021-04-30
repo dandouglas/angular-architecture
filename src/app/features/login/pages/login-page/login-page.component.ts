@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { AuthenticationActions } from '@core/authentication/store/actions/authentication-actions';
 import { LoginFacadeService } from '../../services/login-facade.service';
 import { LoginPageActions } from '../../store/actions/login-page.actions';
 
@@ -29,7 +30,7 @@ export class LoginPageComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(): void {
-    this.loginFacadeService.dispatch(LoginPageActions.login());
+    this.loginFacadeService.dispatch(AuthenticationActions.login());
   }
 
 }

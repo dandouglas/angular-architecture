@@ -5,10 +5,10 @@
       <li>
         <a [routerLink]="['/']">Home</a>
       </li>
-      <li *ngIf="(isLoggedIn$ | async) === true">
-        <a [routerLink]="['login']">Logout</a>
+      <li *ngIf="(isAuthenticated$ | async) === true">
+        <a href="#" (click)="logout()">Logout</a>
       </li>
-      <li *ngIf="(isLoggedIn$ | async) === false">
+      <li *ngIf="(isAuthenticated$ | async) === false">
         <a [routerLink]="['login']">Login</a>
       </li>
     </ul>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginFacadeService } from '@features/login/services/login-facade.service';
+import { AuthenticationFacadeService } from '@core/authentication/services/authentication-facade.service';
+import { AuthenticationActions } from '@core/authentication/store/actions/authentication-actions';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-navigation',
@@ -7,18 +9,18 @@ import { LoginFacadeService } from '@features/login/services/login-facade.servic
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
-  isLoggedIn$: any;
+  isAuthenticated$!: Observable<boolean>;
 
   constructor(
-    private loginFacadeService: LoginFacadeService
+    private authenticationFacadeService: AuthenticationFacadeService,
   ) { }
 
   ngOnInit(): void {
-    this.isLoggedIn$ = this.loginFacadeService.getLoggedInState();
+    this.isAuthenticated$ = this.authenticationFacadeService.getCurrentAuthState();
   }
 
   logout(): void {
-    // Logout
+    this.authenticationFacadeService.dispatch(AuthenticationActions.logout);
   }
 
 }

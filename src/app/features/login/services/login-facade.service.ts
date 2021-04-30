@@ -20,8 +20,4 @@ export class LoginFacadeService {
   getLoginPageState(): Observable<LoginPageState | undefined> {
     return this.store.select(LoginSelectors.selectLoginPageState);
   }
-
-  getLoggedInState(): Observable<boolean | undefined> {
-    return this.store.select(LoginSelectors.selectLoggedInState);
-  }
 }

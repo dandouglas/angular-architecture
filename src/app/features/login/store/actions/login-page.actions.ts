@@ -8,12 +8,7 @@ const leavePage = createAction(
   '[Login Page] Leave page',
 );
 
-const login = createAction(
-  '[Login Page] Login',
-);
-
 export const LoginPageActions = {
   enterPage,
   leavePage,
-  login,
 };
