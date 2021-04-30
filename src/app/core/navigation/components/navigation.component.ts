@@ -20,7 +20,7 @@ export class NavigationComponent implements OnInit {
   }
 
   logout(): void {
-    this.authenticationFacadeService.dispatch(AuthenticationActions.logout);
+    this.authenticationFacadeService.dispatch(AuthenticationActions.logout());
   }
 
 }

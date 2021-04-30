@@ -8,13 +8,10 @@ export const initialAuthState: AuthenticationState = {
 
 const authReducerFn = createReducer(
   initialAuthState,
-  // on(AuthenticationActions.login, (state: AuthenticationState) => ({
-  //   ...state,
-  //   loginPageState: {
-  //     initialising: false,
-  //   },
-  //   loggedIn: true
-  // })),
+  on(AuthenticationActions.logout, (state: AuthenticationState) => ({
+    ...state,
+    authenticated: false
+  })),
   on(AuthenticationActions.authSuccess, (state: AuthenticationState) => ({
     ...state,
     authenticated: true
