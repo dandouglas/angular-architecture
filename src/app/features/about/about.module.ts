@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
-import { AboutRoutingModule } from '@router/about/about-routing.module';
+import { AboutRoutingModule } from '@features/about/pages/about-page/about-routing.module';
 
 
 
