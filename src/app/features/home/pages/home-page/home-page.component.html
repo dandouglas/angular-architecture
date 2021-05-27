@@ -1,7 +1,10 @@
-<div class="container">
-  <app-jumbotron
-    title="Welcome to the exciting homepage"
-    lead="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-    (doSomething)="onDoSomething($event)"
-  ></app-jumbotron>
-</div>
+<app-page>
+  <h2>Howdy</h2>
+  <section>
+      <app-jumbotron
+        title="Welcome to the exciting homepage"
+        lead="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        (doSomething)="onDoSomething($event)">
+      </app-jumbotron>
+  </section>
+</app-page>
