@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AboutFacadeService } from '@features/about/services/about-facade.service';
+import { AboutPageActions } from '@features/about/store/actions/about-page.actions';
 
 @Component({
   selector: 'app-about-page',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private aboutFacadeService: AboutFacadeService,
+  ) { }
 
   ngOnInit(): void {
+    this.aboutFacadeService.dispatch(AboutPageActions.enterPage());
+  }
+
+  ngOnDestroy(): void {
+    this.aboutFacadeService.dispatch(AboutPageActions.leavePage());
   }
 
 }
